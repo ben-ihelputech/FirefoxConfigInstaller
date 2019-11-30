@@ -102,6 +102,7 @@ tar xvfj "$TEMPFOLDER"/"$FIRETAR" -C "$TEMPFOLDER"
 
 #Configuring Firefox
 if [ -z "$AUTOSTART" ]
+then
 	echo "$SPACER"
 	echo "The autostart.js file has not been set. Setting now..."
 	echo "$SPACER"
@@ -114,6 +115,7 @@ echo "$SPACER"
 cp "$AUTOSTART" "$TEMPFOLDER"/firefox/defaults/pref/
 
 if [ -z "FIREFOXCFG" ]
+then
 	echo "$SPACER"
 	echo "The firefox.cfg file has not been set. Setting now..."
 	echo "$SPACER"
