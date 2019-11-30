@@ -1,17 +1,18 @@
 #!/bin/bash
+#Debian/Ubuntu Installer
 #List of all varibles
 TEMPFOLDER="/tmp/lockedFirefox"
 OVERWRITE=""
 REMOVE=""
 FIRETAR="firefox.bz2"
 SPACER="==================="
-AUTOCONFIG=""
+AUTOSTART=""
 FIREFOXCFG=""
 WHICH="which firefox"
 
 #Desktop Entry
 DESKTOP="[Desktop Entry]
-Version=1.0
+Version=1.1
 Name=Firefox
 GenericName=Firefox
 Comment=Firefox
@@ -23,8 +24,8 @@ Categories=Network;WebBrowser;
 MimeType=text/html;"
 
 #Set config file names
-read -p "Specify the location of autoconfig.js (Enter for default)" AUTOCONFIG
-echo "autoconfig.js has been set as "$AUTOCONFIG""
+read -p "Specify the location of autostart.js (Enter for default)" AUTOSTART
+echo "autostart.js has been set as "$AUTOSTART""
 read -p "Specify the location of firefox.cfg (Enter for default)" FIREFOXCFG
 echo "firefox.cfg has been set as "$FIREFOXCFG""
 echo "$SPACER"
@@ -35,11 +36,11 @@ case "$REMOVE" in
 [yY] | [yY][eE][sS])
 	echo "Removing Firefox..."
 	sleep 1
-	#sudo apt remove firefox
-	#sudo rm "$WHICH"
+	sudo apt remove firefox
+	sudo rm "$WHICH"
 	if [ -e ~/.local/share/applications/firefox.desktop ]
 	then
-		#rm ~/.local/share/applications/firefox.desktop
+		rm ~/.local/share/applications/firefox.desktop
 	fi
 	;;
 [nN] | [nN][oO])
@@ -54,7 +55,7 @@ case "$REMOVE" in
 *)
 	echo "Removing Firefox..."
 	sleep 1
-	#sudo apt remove firefox
+	sudo apt remove firefox
 	;;
 esac
 
@@ -97,15 +98,15 @@ echo "$SPACER"
 tar xvfj "$TEMPFOLDER"/"$FIRETAR" -C "$TEMPFOLDER"
 
 #Configuring Firefox
-if [ -z "$AUTOCONFIG" ]
+if [ -z "$AUTOSTART" ]
 	echo "$SPACER"
-	echo "The autoconfig.js file has not been set. Skipping..."
+	echo "The autostart.js file has not been set. Skipping..."
 	echo "$SPACER"
 else
 	echo "$SPACER"
-	echo "Copying autoconfig.js..."
+	echo "Copying autostart.js..."
 	echo "$SPACER"
-	cp "$AUTOCONFIG" "$TEMPFOLDER"/firefox/defaults/pref/	
+	cp "$AUTOSTART" "$TEMPFOLDER"/firefox/defaults/pref/	
 fi
 if [ -z "FIREFOXCFG" ]
 	echo "$SPACER"
@@ -113,7 +114,7 @@ if [ -z "FIREFOXCFG" ]
 	echo "$SPACER"
 else
 	echo "$SPACER"
-	echo "Copying autoconfig.js..."
+	echo "Copying autostart.js..."
 	echo "$SPACER"
 	cp "FIREFOXCFG" "$TEMPFOLDER"/firefox/	
 fi

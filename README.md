@@ -13,7 +13,7 @@ Run the installer from the command line:
 ./debianInstaller.sh
 ```
 
-###Mac
+### Mac
 Run the installer from the command line:
 ```
 ./macInstaller.sh
