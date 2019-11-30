@@ -102,28 +102,29 @@ tar xvfj "$TEMPFOLDER"/"$FIRETAR" -C "$TEMPFOLDER"
 
 #Configuring Firefox
 if [ -z "$AUTOSTART" ]
-then
 	echo "$SPACER"
-	echo "The autostart.js file has not been set. Skipping..."
+	echo "The autostart.js file has not been set. Setting now..."
 	echo "$SPACER"
-else
-	echo "$SPACER"
-	echo "Copying autostart.js..."
-	echo "$SPACER"
-	cp "$AUTOSTART" "$TEMPFOLDER"/firefox/defaults/pref/
+	AUTOSTART="autostart.js"
 fi
 
+echo "$SPACER"
+echo "Copying autostart.js..."
+echo "$SPACER"
+cp "$AUTOSTART" "$TEMPFOLDER"/firefox/defaults/pref/
+
 if [ -z "FIREFOXCFG" ]
-then
 	echo "$SPACER"
-	echo "The firefox.cfg file has not been set. Skipping..."
+	echo "The firefox.cfg file has not been set. Setting now..."
 	echo "$SPACER"
-else
-	echo "$SPACER"
-	echo "Copying autostart.js..."
-	echo "$SPACER"
-	cp "$FIREFOXCFG" "$TEMPFOLDER"/firefox/
+	FIREFOXCFG="firefox.cfg"
 fi
+
+echo "$SPACER"
+echo "Copying firefox.cfg..."
+echo "$SPACER"
+cp "$FIREFOXCFG" "$TEMPFOLDER"/firefox/
+
 
 #Copy to /opt and install
 if [ -d /opt/firefox ]
