@@ -23,6 +23,9 @@ Type=Application
 Categories=Network;WebBrowser;
 MimeType=text/html;"
 
+#Autostart.js
+
+
 #Set config file names
 read -p "Specify the location of autostart.js (Enter for default)" AUTOSTART
 echo "autostart.js has been set as "$AUTOSTART""
@@ -79,7 +82,7 @@ then
 		exit 1
 		;;
 	esac
-else 
+else
 	# echo "Temp folder does NOT exist"
 	mkdir "$TEMPFOLDER"
 fi
@@ -99,6 +102,7 @@ tar xvfj "$TEMPFOLDER"/"$FIRETAR" -C "$TEMPFOLDER"
 
 #Configuring Firefox
 if [ -z "$AUTOSTART" ]
+then
 	echo "$SPACER"
 	echo "The autostart.js file has not been set. Skipping..."
 	echo "$SPACER"
@@ -106,9 +110,11 @@ else
 	echo "$SPACER"
 	echo "Copying autostart.js..."
 	echo "$SPACER"
-	cp "$AUTOSTART" "$TEMPFOLDER"/firefox/defaults/pref/	
+	cp "$AUTOSTART" "$TEMPFOLDER"/firefox/defaults/pref/
 fi
+
 if [ -z "FIREFOXCFG" ]
+then
 	echo "$SPACER"
 	echo "The firefox.cfg file has not been set. Skipping..."
 	echo "$SPACER"
@@ -116,7 +122,7 @@ else
 	echo "$SPACER"
 	echo "Copying autostart.js..."
 	echo "$SPACER"
-	cp "FIREFOXCFG" "$TEMPFOLDER"/firefox/	
+	cp "$FIREFOXCFG" "$TEMPFOLDER"/firefox/
 fi
 
 #Copy to /opt and install
@@ -126,8 +132,7 @@ then
 	case "$OVERWRITE"  in
 	[yY] | [yY][eE][sS])
 		echo "Overwriting old folder..."
-		#sudo rm -Rf /opt/firefox
-		#mkdir "$TEMPFOLDER"
+		sudo rm -Rf /opt/firefox
 		;;
 	[nN] | [nN][oO])
 		echo "$SPACER"
@@ -142,15 +147,15 @@ then
 		exit 1
 		;;
 	esac
-else
+fi
 	echo "$SPACER"
 	echo "Copying to /opt folder and making link..."
 	echo "$SPACER"
 	sudo mv "$TEMPFOLDER"/firefox /opt
-	ln -s /opt/firefox/firefox /usr/bin/firefox
+	sudo ln -s /opt/firefox/firefox /usr/bin/firefox
 	touch ~/.local/share/applications/firefox.desktop
-	echo "$DESKTOP" >> ~/.local/share/applications/firefox.desktop	
-fi
+	echo "$DESKTOP" >> ~/.local/share/applications/firefox.desktop
+
 
 #Cleaning up
 echo "$SPACER"
