@@ -1,6 +1,7 @@
-# Deploying a locked Firefox
+# Deploying a Pre-configured Firefox
 
-How to deploy a copy of Firefox with a locked "about:config"
+How to deploy a copy of Firefox with a custom "about:config"
+This tool lets you set several Firefox preferences in advance by setting a "firefox.cfg" file.
 
 ## Prerequisites
 
@@ -47,7 +48,20 @@ Error 203
 ```
 Homebrew was not installed. Homebrew is currently necessary for this script.
 
+## Future Plans
+* Update the debian script to have all user input towards the beginning.
+* Add flags for easier use in scripts
+* Make an update script to more easily update
+* Create Windows version. 
+
+## Suggestions and bug report
+Please let me know if you have any feature suggestions or find any bugs. You can reply to my GitHub repository or email me at ben@ihelpu.tech
+Please make sure to have "Firefox Script" as your subject.
+Thanks for using the script and I hope it saves you some time!
+
 ## Acknowledgments
 Credit to the following articles:
 * (https://www.techrepublic.com/article/how-to-deploy-firefox-with-locked-aboutconfig-settings/)
 * (https://support.mozilla.org/en-US/kb/customizing-firefox-using-autoconfig#w_setting-up-autoconfig)
+
+* (https://brew.sh)
