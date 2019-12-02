@@ -7,7 +7,7 @@ REMOVE=""
 FIRETAR="firefox.bz2"
 SPACER="==================="
 AUTOSTART=""
-FIREFOXCFG=""
+CFG=""
 WHICH="which firefox"
 
 #Desktop Entry
@@ -29,8 +29,8 @@ MimeType=text/html;"
 #Set config file names
 read -p "Specify the location of autostart.js (Enter for default)" AUTOSTART
 echo "autostart.js has been set as "$AUTOSTART""
-read -p "Specify the location of firefox.cfg (Enter for default)" FIREFOXCFG
-echo "firefox.cfg has been set as "$FIREFOXCFG""
+read -p "Specify the location of firefox.cfg (Enter for default)" CFG
+echo "firefox.cfg has been set as "$CFG""
 echo "$SPACER"
 
 #Remove firefox
