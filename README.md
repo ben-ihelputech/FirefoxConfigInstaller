@@ -19,6 +19,11 @@ Run the installer from the command line:
 ./macInstaller.sh
 ```
 #### Things to note:
+Homebrew and wget are used in this script. If you are having issues, try to install them beforehand by going to the terminal and running:
+```
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" && brew update && brew install wget
+```
+
 The first option the installer will ask is where your ".cfg" file is located. This is your firefox.cfg file where all of the preferences are set.
 You have two options when installing this:
 1. Provide a web link where the script can download a hosted file. *The script currently uses wget as the main way of downloading files

@@ -1,5 +1,5 @@
 #!/bin/bash
-#macOS Installer WIP
+#macOS Installer Version 1.1
 
 #-----------------------------------------------
 ##Sections:
@@ -149,7 +149,7 @@ mkdir "$DEST"
 
 
 #Install Homebrew & wget
-if [[ BREWINSTALLED == "false" ]] ; then
+if [[ "$BREWINSTALLED" == "false" ]] ; then
 	echo "Installing Homebrew..."
     # Install Homebrew
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -158,7 +158,6 @@ else
     brew install wget
     echo "Installing wget..."
 fi
-
 
 #download firefox
 if [[ "$OVERWRITECACHE" == "true" ]]; 
