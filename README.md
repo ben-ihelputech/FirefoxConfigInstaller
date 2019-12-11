@@ -1,4 +1,6 @@
 # Deploying a Pre-configured Firefox
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fben-ihelputech%2FFirefoxConfigInstaller.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fben-ihelputech%2FFirefoxConfigInstaller?ref=badge_shield)
+
 
 How to deploy a copy of Firefox with a custom "about:config"
 This tool lets you set several Firefox preferences in advance by setting a "firefox.cfg" file.
@@ -65,3 +67,6 @@ Credit to the following articles:
 * (https://support.mozilla.org/en-US/kb/customizing-firefox-using-autoconfig#w_setting-up-autoconfig)
 
 * (https://brew.sh)
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fben-ihelputech%2FFirefoxConfigInstaller.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fben-ihelputech%2FFirefoxConfigInstaller?ref=badge_large)
