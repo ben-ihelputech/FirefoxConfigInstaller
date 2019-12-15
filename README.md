@@ -5,7 +5,7 @@ This tool lets you set several Firefox preferences in advance by setting a "fire
 
 ## Prerequisites
 
-I recommend uninstalling or quarantining all other installations of Firefox if you are planning to use this guide for a kiosk or as the main browser in an enterprise environment. 
+I recommend uninstalling or quarantining all other installations of Firefox if you are planning to use this guide for a kiosk or as the main browser in an enterprise environment.
 
 ## Installing
 ### Debian/Ubuntu
@@ -48,11 +48,18 @@ Error 203
 ```
 Homebrew was not installed. Homebrew is currently necessary for this script.
 
+```
+Error 204
+```
+The script was run on an unsupported operating system.
+Currently, macOS and linux are supported.
+If you think this is a bug, please contact us with the output of 'uname -s'
+
 ## Future Plans
 * Update the debian script to have all user input towards the beginning.
 * Add flags for easier use in scripts
 * Make an update script to more easily update
-* Create Windows version. 
+* Create Windows version.
 
 ## Suggestions and bug report
 Please let me know if you have any feature suggestions or find any bugs. You can reply to my GitHub repository or email me at ben@ihelpu.tech
